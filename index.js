@@ -3,16 +3,21 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const adminRoutes = require('./src/routes/AdminRoute');
-const login = require('./src/routes/LoginRoute')
+const tiketRoutes = require('./src/routes/TiketRoute');
+const login = require('./src/routes/LoginRoute');
+const logout = require('./src/routes/LogoutRoute');
+const RefreshToken = require('./src/routes/RefreshTokenRoute');
 require('dotenv').config();
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(
-    cors({
-        origin: 'http://localhost:5173',
-        credentials: true,
-    })
+    cors(
+		{
+			origin: 'http://localhost:3000',
+			credentials: true,
+		}
+	)
 );
 
 mongoose
@@ -32,4 +37,7 @@ mongoose
 	});
 
 app.use(adminRoutes);
+app.use(tiketRoutes);
 app.use(login)
+app.use(logout)
+app.use(RefreshToken)

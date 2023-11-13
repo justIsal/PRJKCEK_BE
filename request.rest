@@ -7,10 +7,19 @@ Content-Type: application/json
     "password": "12345678"
 }
 ###
-DELETE http://localhost:5174/admin/65425db423c8a72f88d94d9d
+DELETE http://localhost:5174/logout
 ###
 GET http://localhost:5174/admin/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzYWxtYW5pQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTY3OCIsImlhdCI6MTY5OTYyNjk5NywiZXhwIjoxNjk5NjI2OTk3fQ.41iR9zsP73Mwps-PGI8HLL5xvxMXSM4HJz9hBy9q6gs
 ###
+POST http://localhost:5174/login
+Content-Type: application/json
+
+{
+    "email": "tsalmani@example.com",
+    "password": "12345678"
+}
+################################
 POST http://localhost:5174/login
 Content-Type: application/json
 
@@ -18,3 +27,16 @@ Content-Type: application/json
     "email": "jhon.doe@example.com",
     "password": "12345678"
 }
+####
+POST http://localhost:5174/tiket
+Content-Type: application/json
+
+{
+    "name": "user2020",
+    "noWa": "03333333",
+    "kdTempat": ["kd1","kd2","kd3","kd4","kd5"],
+    "waktuBooking": "2023-11-15T14:30:00",
+    "tanggalLahir": "2023-11-15T14:30:00",
+}
+################################
+GET http://localhost:5174/tiket
