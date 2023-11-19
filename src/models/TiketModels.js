@@ -18,7 +18,11 @@ const TiketSchema = new mongoose.Schema(
             type: [String],
             required: true
         },
-        waktuBooking: {
+        sesiBooking: {
+            type: String,
+            required: true
+        },
+        tanggalBooking: {
             type: String,
             required: true
         },
