@@ -5,14 +5,14 @@ const authenticateToken = require('../middleware/verifyToken');
 
 router.post('/tiket', tiketController.createTiket);
 
-router.post('/tiket/pesanan',tiketController.getTiketBypesanan )
+router.post('/tiket/pesanan',authenticateToken,tiketController.getTiketBypesanan )
 
-router.get('/tiket',tiketController.getAllTikets)
+router.get('/tiket',authenticateToken,tiketController.getAllTikets)
 
-router.get('/tiket/:id', tiketController.getTiketById);
+router.get('/tiket/:id',authenticateToken, tiketController.getTiketById);
 
-router.put('/tiket/:id', tiketController.updateTiket);
+router.put('/tiket/:id',authenticateToken, tiketController.updateTiket);
 
-router.delete('/tiket', tiketController.deleteTiket);
-router.delete('/tiket/:id', tiketController.deleteTiketById);
+router.delete('/tiket',authenticateToken, tiketController.deleteTiket);
+router.delete('/tiket/:id',authenticateToken, tiketController.deleteTiketById);
 module.exports = router

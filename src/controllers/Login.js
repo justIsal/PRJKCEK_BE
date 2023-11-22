@@ -13,7 +13,7 @@ const login = async(req,res)=> {
             return res.status(401).json({error: "Invalid password"});
         }
         const accessToken = jwt.sign({email,password},process.env.ATS, {
-            expiresIn: "30m"
+            expiresIn: "3h"
         })
         const refreshToken = jwt.sign({email,password},process.env.RTS, {
             expiresIn: "1d"

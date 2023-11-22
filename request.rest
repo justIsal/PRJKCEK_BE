@@ -192,3 +192,121 @@ Content-Type: application/json
     "sesiBooking": "16:00:00",
     "tanggalBooking": "2023-11-15"
 }
+######
+POST http://localhost:5174/tiket
+Content-Type: application/json
+
+{
+    "name": "client1",
+    "noWa": "234543",
+    "tanggalLahir": "2023-11-16",
+    "kdTempat": [
+      "kd4",
+      "kd9"
+    ],
+    "sesiBooking": "16:00:00",
+    "tanggalBooking": "2023-10-1",
+    "waktuPesan": "2023-10-11",
+    "isVerified": true
+}
+################################
+POST http://localhost:5174/tiket
+Content-Type: application/json
+
+{
+    "name": "client7",
+    "noWa": "234543",
+    "tanggalLahir": "2023-11-16",
+    "kdTempat": [
+      "kd4",
+      "kd9"
+    ],
+    "sesiBooking": "16:00:00",
+    "tanggalBooking": "2023-11-15",
+    "waktuPesan": "2023-11-12",
+    "isVerified": true
+}
+################################
+POST http://localhost:5174/tiket
+Content-Type: application/json
+
+{
+    "name": "client8",
+    "noWa": "234543",
+    "tanggalLahir": "2023-11-16",
+    "kdTempat": [
+      "kd4",
+      "kd1"
+    ],
+    "sesiBooking": "16:00:00",
+    "tanggalBooking": "2023-11-15",
+    "waktuPesan": "2023-11-13",
+    "isVerified": true
+}
+################################
+POST http://localhost:5174/tiket
+Content-Type: application/json
+
+{
+    "name": "client9",
+    "noWa": "234543",
+    "tanggalLahir": "2023-11-16",
+    "kdTempat": [
+      "kd4",
+      "kd9"
+    ],
+    "sesiBooking": "16:00:00",
+    "tanggalBooking": "2023-11-15",
+    "waktuPesan": "2023-11-13",
+    "isVerified": true
+}
+################################
+POST http://localhost:5174/tiket
+Content-Type: application/json
+
+{
+    "name": "client10",
+    "noWa": "234543",
+    "tanggalLahir": "2023-11-16",
+    "kdTempat": [
+      "kd4",
+      "kd3"
+    ],
+    "sesiBooking": "16:00:00",
+    "tanggalBooking": "2023-11-15",
+    "waktuPesan": "2023-11-14",
+    "isVerified": true
+}
+################################
+POST http://localhost:5174/tiket
+Content-Type: application/json
+
+{
+    "name": "client11",
+    "noWa": "234543",
+    "tanggalLahir": "2023-11-16",
+    "kdTempat": [
+      "kd4",
+      "kd5"
+    ],
+    "sesiBooking": "16:00:00",
+    "tanggalBooking": "2023-11-15",
+    "waktuPesan": "2023-11-15",
+    "isVerified": true
+}
+
+################################
+POST http://localhost:5174/tiket
+Content-Type: application/json
+
+{
+    "name": "clientBaru222",
+    "noWa": "234543",
+    "tanggalLahir": "2023-11-16",
+    "kdTempat": [
+      "kd8",
+      "kd1"
+    ],
+    "sesiBooking": "16:00:00",
+    "tanggalBooking": "2023-11-15"
+}

@@ -14,7 +14,7 @@ const refreshToken = async (req, res) => {
         const email = user.email;
         const role = user.role;
         // const all = user
-        let expiresIn = "30m";
+        let expiresIn = "3h";
         const accessToken = jwt.sign(
           { userId, name, email, role},
           process.env.ATS,
