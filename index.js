@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(
     cors(
 		{
-			origin: 'http://localhost:3000',
+			origin: 'https://prjk-trampoline-fe.vercel.app',
 			credentials: true,
 		}
 	)
