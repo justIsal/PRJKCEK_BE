@@ -28,10 +28,6 @@ mongoose
 	})
 	.then(() => {
 		console.log('connected to MongoDB');
-		app.listen(process.env.APP_PORT, () => {
-			console.log(`Node API app is running on port ${process.env.APP_PORT}`);
-		});
-		console.log('mantap')
 	})
 	.catch((err) => {
 		console.log(err);
@@ -44,3 +40,6 @@ app.use("/api/v1/logout",logout)
 app.use("/api/v1/token",RefreshToken)
 app.get("/", (req, res) => res.send("Welcome to the Users API!"));
 app.all("*", (req, res) =>res.send("You've tried reaching a route that doesn't exist."));
+app.listen(process.env.APP_PORT, () => {
+	console.log(`Node API app is running on port ${process.env.APP_PORT}`);
+});
