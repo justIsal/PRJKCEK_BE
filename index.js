@@ -7,31 +7,22 @@ const tiketRoutes = require('./src/routes/TiketRoute');
 const login = require('./src/routes/LoginRoute');
 const logout = require('./src/routes/LogoutRoute');
 const RefreshToken = require('./src/routes/RefreshTokenRoute');
+const connectDB = require('./src/config/db');
 require('dotenv').config();
+const PORT = process.env.PORT
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
 
 app.use(
     cors(
-		// {
-		// 	origin: 'http://localhost:3000',
-		// 	credentials: true,
-		// }
+		{
+			origin: 'http://localhost:3000',
+			credentials: true,
+		}
 	)
 );
-
-mongoose
-    .connect(process.env.DB_URI, {
-        useNewUrlParser: true,
-		useUnifiedTopology: true,
-	})
-	.then(() => {
-		console.log('connected to MongoDB');
-	})
-	.catch((err) => {
-		console.log(err);
-	});
+connectDB()
 
 app.use("/api/v1/admin",adminRoutes);
 app.use("/api/v1/tiket",tiketRoutes);
@@ -40,6 +31,6 @@ app.use("/api/v1/logout",logout)
 app.use("/api/v1/token",RefreshToken)
 app.get("/", (req, res) => res.send("Welcome to the Users API!"));
 app.all("*", (req, res) =>res.send("You've tried reaching a route that doesn't exist."));
-app.listen(process.env.APP_PORT, () => {
-	console.log(`Node API app is running on port ${process.env.APP_PORT}`);
+app.listen(PORT, () => {
+	console.log(`Node API app is running on port ${PORT}`);
 });
