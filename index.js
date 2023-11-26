@@ -37,10 +37,10 @@ mongoose
 		console.log(err);
 	});
 
-app.use(adminRoutes);
-app.use(tiketRoutes);
-app.use(login)
-app.use(logout)
-app.use(RefreshToken)
+app.use("/api/v1/admin",adminRoutes);
+app.use("/api/v1/tiket",tiketRoutes);
+app.use("/api/v1/login",login)
+app.use("/api/v1/logout",logout)
+app.use("/api/v1/token",RefreshToken)
 app.get("/", (req, res) => res.send("Welcome to the Users API!"));
 app.all("*", (req, res) =>res.send("You've tried reaching a route that doesn't exist."));

@@ -3,16 +3,14 @@ const router = express.Router();
 const tiketController = require('../controllers/TiketController');
 const authenticateToken = require('../middleware/verifyToken');
 
-router.post('/tiket', tiketController.createTiket);
+router.post('/', tiketController.createTiket);
 
-router.post('/tiket/pesanan',authenticateToken,tiketController.getTiketBypesanan )
+router.get('/',authenticateToken,tiketController.getAllTikets)
 
-router.get('/tiket',authenticateToken,tiketController.getAllTikets)
+router.get('/:id',authenticateToken, tiketController.getTiketById);
 
-router.get('/tiket/:id',authenticateToken, tiketController.getTiketById);
+router.put('/:id',authenticateToken, tiketController.updateTiket);
 
-router.put('/tiket/:id',authenticateToken, tiketController.updateTiket);
-
-router.delete('/tiket',authenticateToken, tiketController.deleteTiket);
-router.delete('/tiket/:id',authenticateToken, tiketController.deleteTiketById);
+router.delete('/',authenticateToken, tiketController.deleteTiket);
+router.delete('/:id',authenticateToken, tiketController.deleteTiketById);
 module.exports = router
