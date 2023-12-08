@@ -13,15 +13,15 @@ const PORT = process.env.PORT
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
-
-app.use(
-    cors(
-		{
-			origin: 'https://prjk-trampoline-fe.vercel.app',
-			credentials: true,
-		}
-	)
-);
+app.use(cors());
+// app.use(
+//     cors(
+// 		{
+// 			origin: 'https://prjk-trampoline-fe.vercel.app',
+// 			credentials: true,
+// 		}
+// 	)
+// );
 connectDB()
 
 app.use("/api/v1/admin",adminRoutes);
